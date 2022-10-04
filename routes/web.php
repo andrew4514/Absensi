@@ -27,5 +27,4 @@ Auth::routes();
 
 Route::get('siswa', [App\Http\Controllers\HomeController::class, 'index'])->middleware('checkRole:siswa');
 
-
-// restytfvbiuyghjiygbjyfhg
+//test
