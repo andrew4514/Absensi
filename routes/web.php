@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-})->middleware('guest');
+Route::get('/', function () { return view('auth.login');} )->name('login')->middleware('guest');
 
+Route::resource('Tambah-Data-Keterangan', 'KetController');
 
 Auth::routes();
 
-Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
+Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index'])->name('absensi')->middleware('auth');
 

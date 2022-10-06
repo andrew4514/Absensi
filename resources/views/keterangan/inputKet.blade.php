@@ -2,6 +2,7 @@
 
 @section('content')
     
-  @include('templateBackend.content')
+
+</div>
     
 @endsection
