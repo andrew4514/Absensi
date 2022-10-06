@@ -21,6 +21,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
-    Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index']);
-});
+Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
+
