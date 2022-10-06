@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {  
     return view('auth.login');
-});
+})->middleware('guest');
 
 
 Auth::routes();
+
 
 Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index']);
 
