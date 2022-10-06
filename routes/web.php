@@ -19,11 +19,7 @@ Route::get('/', function () {
 });
 
 
-// hak akses
-Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
-Route::get('siswa', function () { return view('siswa'); })->middleware('checkRole:siswa');
-
 Auth::routes();
 
-Route::get('siswa', [App\Http\Controllers\HomeController::class, 'index'])->middleware('checkRole:siswa');
+Route::get('siswa', [App\Http\Controllers\HomeController::class, 'index']);
 
