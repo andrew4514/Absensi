@@ -14,14 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {  
+Route::get('/', function () {
     return view('auth.login');
 })->middleware('guest');
 
 
 Auth::routes();
 
-
-Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index']);
-
-//test
+Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
+    Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index']);
+});
