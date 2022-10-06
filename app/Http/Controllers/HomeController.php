@@ -23,9 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if ($role = 'admin') {
-            # code...
-        }
         return view('siswa');
     }
 }

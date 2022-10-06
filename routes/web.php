@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('siswa', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index']);
 
 //test
