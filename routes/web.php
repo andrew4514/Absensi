@@ -23,3 +23,4 @@ Auth::routes();
 
 Route::get('siswa', [App\Http\Controllers\HomeController::class, 'index']);
 
+//test
