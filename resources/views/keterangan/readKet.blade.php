@@ -34,7 +34,7 @@
                 <tr>
                 <th scope="row">{{ $i }}</th>
                 <td>{{ $k->keterangan }}</td>
-                <td><button class="btn btn-primary">Edit</button></td>
+                <td><a href=""></a><button class="btn btn-primary">Edit</button></td>
                   <form action="{{route('keterangan.destroy',[$k->id])}}" method="post">
                     @csrf
                     {{method_field('DELETE')}}
