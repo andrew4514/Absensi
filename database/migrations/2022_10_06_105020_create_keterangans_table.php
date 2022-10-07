@@ -15,7 +15,6 @@ class CreateKeterangansTable extends Migration
     {
         Schema::create('keterangans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('keterangan_id');
             $table->string('keterangan');
             $table->timestamps();
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KetController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('auth.login');} )->name('login')->middleware('guest');
 
-Route::resource('Tambah-Data-Keterangan', 'KetController');
+Route::resource('keterangan', 'KetController');
+Route::get('createKet','ketController@create');
 
 Auth::routes();
 
