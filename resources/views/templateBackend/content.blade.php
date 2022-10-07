@@ -1,4 +1,5 @@
   <!-- Begin Page Content -->
+  @if (Auth::user()->role=="admin")
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
@@ -92,4 +93,5 @@
                 <!-- /.container-fluid -->
 
             </div>
+            @endif
             <!-- End of Main Content -->

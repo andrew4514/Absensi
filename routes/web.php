@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KetController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {  
-    return view('auth.login');
-});
+Route::get('/', function () { return view('auth.login');} )->name('login')->middleware('guest');
 
+Route::resource('keterangan', 'KetController');
+Route::get('createKet','ketController@create');
 
 Auth::routes();
 
-Route::get('siswa', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index'])->name('absensi')->middleware('auth');
 
-//test
