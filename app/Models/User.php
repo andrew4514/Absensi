@@ -22,11 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> refs/remotes/origin/main
     /**
      * The attributes that should be hidden for serialization.
      *

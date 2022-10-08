@@ -5,15 +5,19 @@
 <h1 class="text-center text-dark mt-4">Table Keterangan Hadir</h1>
 
   @if(Session::has('message'))
-            <div class="alert alert-success mt-5">
-                {{ Session::get('message') }}
-            </div>
+    <div class="container">
+              <div class="alert alert-success mt-5">
+                  {{ Session::get('message') }}
+              </div>
+    </div>
   @endif
 
   @if(Session::has('delete'))
-            <div class="alert alert-danger mt-5">
-                {{ Session::get('delete') }}
-            </div>
+    <div class="container">
+              <div class="alert alert-danger mt-5">
+                  {{ Session::get('delete') }}
+              </div>
+    </div>
   @endif
 
 <div class="container mt-5">

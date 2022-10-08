@@ -93,5 +93,12 @@
                 <!-- /.container-fluid -->
 
             </div>
+            @else              
+            <div class="container">
+                    <div class="text-white bg-success rounded" style="padding: 100px">
+                        
+                    </div>
+            </div>
+        </div>
             @endif
             <!-- End of Main Content -->

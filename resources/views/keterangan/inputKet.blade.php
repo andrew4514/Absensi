@@ -10,8 +10,11 @@
     <form class="col-6" method="POST" action="{{ route('keterangan.store') }}">
         @csrf
         <div class="mb-3">
-            <label for="exampleInputKeterangan" class="form-label">Keterangan</label>
-            <input type="text" class="form-control" name="keterangan" id="exampleInputKeterangan">
+            <label for="exampleInputKeterangan" class="form-label ">Keterangan</label>
+            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="exampleInputKeterangan">
+            @error('keterangan')
+            <div>{{ $message }}</div>
+            @enderror
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
