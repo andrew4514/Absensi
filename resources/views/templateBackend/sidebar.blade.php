@@ -108,7 +108,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Create Data :</h6>
                         <a class="collapse-item" href="{{ url('createKet') }}">Keterangan</a>
-                        <a class="collapse-item" href="register.html">Kelas</a>
+                        <a class="collapse-item" href="kelas">Kelas</a>
                     </div>
                 </div>
             </li>
@@ -123,7 +123,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Read Data :</h6>
                         <a class="collapse-item" href="{{ route('keterangan.index') }}">Keterangan</a>
-                        <a class="collapse-item" href="register.html">Kelas</a>
+                        <a class="collapse-item" href="{{ route('kelasSD.index') }}">Kelas</a>
                     </div>
                 </div>
             </li>

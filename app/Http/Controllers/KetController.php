@@ -30,6 +30,19 @@ class KetController extends Controller
         return redirect('keterangan')->with('message','Data telah disimpan!');
     }
 
+    public function edit($id){
+        $ket = Keterangan::find($id);
+        return view('keterangan.editKet',compact('ket'));
+    }
+
+    public function update(Request $request, $id){
+        $ket = Keterangan::find($id);
+        $ket->keterangan = $request->keterangan;
+        $ket->save();
+
+        return redirect('keterangan')->with('update','Keterangan telah diupdate!');
+    }
+
     public function show($id){
 
     }

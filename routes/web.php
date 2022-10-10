@@ -17,10 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('auth.login');} )->name('login')->middleware('guest');
 
+//kelas
+Route::resource('kelasSD', 'KelasController');
+
+Route::get('kelas',function(){
+    return view('kelas');
+});
+
+// keterangan
 Route::resource('keterangan', 'KetController');
 Route::get('createKet','ketController@create');
 
 Auth::routes();
 
-Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index'])->name('absensi')->middleware('auth');
+Route::get('absensi', [App\Http\Controllers\HomeController::class, 'index'])->name('absensi');
 

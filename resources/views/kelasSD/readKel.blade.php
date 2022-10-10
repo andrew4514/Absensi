@@ -2,28 +2,28 @@
 
 @section('content')
     
-<h1 class="text-center text-dark mt-4">Table Keterangan Hadir</h1>
+<h1 class="text-center text-dark mt-4">Table Kelas <span class="text-primary">(SD)</span></h1>
 
-  @if(Session::has('message'))
+  @if(Session::has('message-create-kelas'))
     <div class="container">
               <div class="alert alert-success mt-5">
-                  {{ Session::get('message') }}
+                  {{ Session::get('message-create-kelas') }}
               </div>
     </div>
   @endif
 
-  @if(Session::has('delete'))
+  @if(Session::has('message-delete-kelas'))
     <div class="container">
               <div class="alert alert-danger mt-5">
-                  {{ Session::get('delete') }}
+                  {{ Session::get('message-delete-kelas') }}
               </div>
     </div>
   @endif
 
-  @if(Session::has('update'))
+  @if(Session::has('message-update-kelas'))
     <div class="container">
               <div class="alert alert-warning mt-5">
-                  {{ Session::get('update') }}
+                  {{ Session::get('message-update-kelas') }}
               </div>
     </div>
   @endif
@@ -33,7 +33,7 @@
         <thead>
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Keterangan</th>
+            <th scope="col">Kelas</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
             </tr>
@@ -42,12 +42,12 @@
             @php
               $i = 1;
             @endphp
-            @foreach ($ket as $k)
+            @foreach ($kel as $k)
                 <tr>
                 <th scope="row">{{ $i }}</th>
-                <td>{{ $k->keterangan }}</td>
-                <td><a href="{{ route('keterangan.edit', [$k->id]) }}"><button class="btn btn-primary">Edit</button></a></td>
-                  <form action="{{route('keterangan.destroy',[$k->id])}}" method="post">
+                <td>{{ $k->kelas }}</td>
+                <td><a href="{{ route('kelasSD.edit', [$k->id]) }}"><button class="btn btn-primary">Edit</button></a></td>
+                  <form action="{{route('kelasSD.destroy',[$k->id])}}" method="post">
                     @csrf
                     {{method_field('DELETE')}}
                     <td><button class="btn btn-danger">Delete</button></td>
