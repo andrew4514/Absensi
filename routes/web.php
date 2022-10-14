@@ -19,9 +19,14 @@ Route::get('/', function () { return view('auth.login');} )->name('login')->midd
 
 //kelas
 Route::resource('kelasSD', 'KelasController');
+Route::resource('kelasSMP', 'KelasSMPController');
 
 Route::get('kelas',function(){
     return view('kelas');
+});
+
+Route::get('tableKelas', function(){
+    return view('tableKelas');
 });
 
 // keterangan

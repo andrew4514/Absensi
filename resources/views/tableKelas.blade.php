@@ -8,9 +8,9 @@
             <img src="{{ asset('image') }}/{{ 'class.png' }}" width="400px" alt="">
         </div>
         <center>
-        <p>Pilih Nama Kelas yang ingin ditambahkan</p>
-            <a href="{{ route('kelasSD.create') }}">SD</a><br>
-            <a href="{{ route('kelasSMP.create') }}">SMP</a><br>
+        <p>Pilih Table Kelas</p>
+            <a href="{{ route('kelasSD.index') }}">SD</a><br>
+            <a href="{{ route('kelasSMP.index') }}">SMP</a><br>
             <a href="">SMA</a><br>
             <a href="">SMK</a>
         </center>

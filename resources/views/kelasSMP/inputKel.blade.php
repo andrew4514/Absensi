@@ -2,12 +2,12 @@
 
 @section('content')
 
-<h1 class="text-center" style="margin-top: 10%">Input Nama Kelas <span class="text-success">(SD)</span></h1>
+<h1 class="text-center" style="margin-top: 10%">Input Nama Kelas <span class="text-success">(SMP)</span></h1>
 
 <div class="container">
     <div class="row" style="margin-top: 6%">
     <div class="col-3"></div>
-    <form class="col-6" method="POST" action="{{ route('kelasSD.store') }}">
+    <form class="col-6" method="POST" action="{{ route('kelasSMP.store') }}">
         @csrf
         <div class="mb-3">
             <label for="exampleInputKelas" class="form-label">Nama Kelas</label>

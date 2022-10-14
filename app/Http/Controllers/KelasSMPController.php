@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\kelasSMP;
 
 class KelasSMPController extends Controller
 {
@@ -13,7 +14,8 @@ class KelasSMPController extends Controller
      */
     public function index()
     {
-        //
+        $kel = kelasSMP::latest()->get();
+        return view('kelasSMP.readKel', compact('kel'));
     }
 
     /**
@@ -23,7 +25,7 @@ class KelasSMPController extends Controller
      */
     public function create()
     {
-        //
+        return view('kelasSMP.inputKel');
     }
 
     /**
@@ -34,7 +36,15 @@ class KelasSMPController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'kelas' => 'required'
+        ]);
+
+        kelasSMP::create([
+            'kelas' => $request->kelas
+        ]);
+
+        return redirect('kelasSMP')->with('message-create-kelas-smp', 'Data telah disimpan!');
     }
 
     /**
@@ -56,7 +66,8 @@ class KelasSMPController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kel = kelasSMP::find($id);
+        return view('kelasSMP.editKel', compact('kel'));
     }
 
     /**
@@ -68,7 +79,11 @@ class KelasSMPController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kel = kelasSMP::find($id);
+        $kel->kelas = $request->kelas;
+        $kel->save();
+
+        return redirect('kelasSMP')->with('message-update-kelas-smp', 'Data telah diupdate!');
     }
 
     /**
@@ -79,6 +94,8 @@ class KelasSMPController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kel = kelasSMP::find($id);
+        $kel->delete();
+        return redirect('kelasSMP')->with('message-delete-kelas-smp', 'Data telah dihapus!');
     }
 }
