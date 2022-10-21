@@ -51,9 +51,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Data
+                @if (Auth::user()->role=="admin")
+                    Data
+                    @else
+                    Absensi
+                @endif
             </div>
 
+            @if (Auth::user()->role=="admin")
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -128,19 +133,15 @@
                 </div>
             </li>
 
-
+            @else
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-edit text-warning"></i>
-                    <span>Update</span></a>
+                <a class="nav-link" href="{{ url('absen') }}">
+                    <span class="text-success"><b style="font-size: 150%;text-decoration: underline">Absen disini</b></span></a>
             </li>
+            @endif
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-trash text-danger"></i>
-                    <span>Delete</span></a>
-            </li>
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

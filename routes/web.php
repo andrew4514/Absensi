@@ -20,6 +20,10 @@ Route::get('/', function () { return view('auth.login');} )->name('login')->midd
 //kelas
 Route::resource('kelasSD', 'KelasController');
 Route::resource('kelasSMP', 'KelasSMPController');
+Route::resource('kelasSMA', 'kelasSMAController');
+Route::resource('kelasSMK', 'kelasSMKController');
+
+Route::get('absen','AbsensiController@index');
 
 Route::get('kelas',function(){
     return view('kelas');

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\KelasSMA;
+use App\Models\absensi;
+use App\Models\Kelas;
 
-class KelasSMAController extends Controller
+class AbsensiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class KelasSMAController extends Controller
      */
     public function index()
     {
-        $kel = kelasSMA::latest()->get();
-        return view('kelasSMA.readKel', compact('kel'));
+        $absensi = Kelas::with('absensi')->get();
+        return view('absensi.absen', compact('absensi'));
     }
 
     /**
@@ -25,7 +26,7 @@ class KelasSMAController extends Controller
      */
     public function create()
     {
-        return view('kelasSMA.inputKel');
+        //
     }
 
     /**
@@ -36,15 +37,7 @@ class KelasSMAController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'kelas' => 'required'
-        ]);
-
-        kelasSMA::create([
-            'kelas' => $request->kelas
-        ]);
-
-        return redirect('kelasSMA')->with('message-create-kelas-sma', 'Data telah disimpan!');
+        //
     }
 
     /**
@@ -66,8 +59,7 @@ class KelasSMAController extends Controller
      */
     public function edit($id)
     {
-        $kel = kelasSMA::find($id);
-        return view('kelasSMA.editKel', compact('kel'));
+        //
     }
 
     /**
@@ -79,11 +71,7 @@ class KelasSMAController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $kel = kelasSMA::find($id);
-        $kel->kelas = $request->kelas;
-        $kel->save();
-
-        return redirect('kelasSMA')->with('message-update-kelas-sma', 'Data telah diupdate!');
+        //
     }
 
     /**
@@ -94,8 +82,6 @@ class KelasSMAController extends Controller
      */
     public function destroy($id)
     {
-        $kel = kelasSMA::find($id);
-        $kel->delete();
-        return redirect('kelasSMA')->with('message-delete-kelas-sma', 'Data telah dihapus!');
+        //
     }
 }

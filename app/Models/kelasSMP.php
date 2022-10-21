@@ -10,4 +10,6 @@ class kelasSMP extends Model
     use HasFactory;
 
     protected $fillable = ['kelas'];
+
+    
 }

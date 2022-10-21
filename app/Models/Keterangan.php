@@ -10,4 +10,8 @@ class Keterangan extends Model
     use HasFactory;
 
     protected $fillable = ['keterangan'];
+
+    public function absensi(){
+        return $this->hasOne(absensi::class);
+    }
 }

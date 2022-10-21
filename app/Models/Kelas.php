@@ -10,4 +10,8 @@ class Kelas extends Model
     use HasFactory;
 
     protected $fillable = ['kelas'];
+
+    public function absensi(){
+        return $this->hasOne(absensi::class);
+    }
 }

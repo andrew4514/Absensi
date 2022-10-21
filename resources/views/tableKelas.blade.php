@@ -11,8 +11,8 @@
         <p>Pilih Table Kelas</p>
             <a href="{{ route('kelasSD.index') }}">SD</a><br>
             <a href="{{ route('kelasSMP.index') }}">SMP</a><br>
-            <a href="">SMA</a><br>
-            <a href="">SMK</a>
+            <a href="{{ route('kelasSMA.index') }}">SMA</a><br>
+            <a href="{{ route('kelasSMK.index') }}">SMK</a>
         </center>
         <div class="mt-3"></div>
     </div>
