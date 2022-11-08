@@ -14,6 +14,7 @@
     <!-- Custom fonts for this template-->
     <link href="{{asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
@@ -114,6 +115,8 @@
                         <h6 class="collapse-header">Create Data :</h6>
                         <a class="collapse-item" href="{{ url('createKet') }}">Keterangan</a>
                         <a class="collapse-item" href="{{ url('kelas') }}">Kelas</a>
+                        <a class="collapse-item" href="{{ route('artikel.create') }}">Artikel</a>
+                        <a class="collapse-item" href="{{ route('kategori.create') }}">Kategori Artikel</a>
                     </div>
                 </div>
             </li>
@@ -129,6 +132,8 @@
                         <h6 class="collapse-header">Read Data :</h6>
                         <a class="collapse-item" href="{{ route('keterangan.index') }}">Keterangan</a>
                         <a class="collapse-item" href="{{ url('tableKelas') }}">Kelas</a>
+                        <a class="collapse-item" href="{{ url('kategori') }}">Kategori</a>
+                        <a class="collapse-item" href="{{ url('artikel') }}">Artikel</a>
                     </div>
                 </div>
             </li>

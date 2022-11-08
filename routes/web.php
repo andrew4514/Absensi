@@ -33,6 +33,11 @@ Route::get('tableKelas', function(){
     return view('tableKelas');
 });
 
+// artikel
+Route::resource('artikel', 'ArtikelController');
+
+// kategori artikel
+route::resource('kategori', 'KategoriController');
 // keterangan
 Route::resource('keterangan', 'KetController');
 Route::get('createKet','ketController@create');
